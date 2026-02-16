@@ -22,15 +22,15 @@ public class PlayerDead : MonoBehaviour
     void Update()
     {
         // Debug.Log(tr.position.y);
-        if(attr.health <= 0 || tr.position.y <= -32f)
+        if (attr.health <= 0 || tr.position.y <= -32f)
         {
-            attr.deadCount++;
+            attr.deadCount += 1;
             anim.SetTrigger("isDead");
             attr.health = attr.maxHealth;
             tr.position = new Vector3(0, -20f, 0);
             rb.velocity = Vector2.zero;
-            
-            // Debug.Log("Player " + this.gameObject.name + " is Dead");
+
+            Debug.Log("Player " + attr.deadCount);
         }
     }
 

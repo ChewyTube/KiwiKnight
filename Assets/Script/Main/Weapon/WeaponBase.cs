@@ -10,8 +10,8 @@ public class WeaponBase : MonoBehaviour
     protected Transform tr;
     protected Transform parentTr;
     protected SpriteRenderer    sr;
-    public PlayerBaseAttribute  attr;
-    public PlayerBaseThrow      Throw;
+    private PlayerBaseAttribute  attr;
+    private PlayerBaseThrow      Throw;
     protected Vector3 bottomLeft;
     protected Vector3 topRight;
     protected Vector3 initOffset;

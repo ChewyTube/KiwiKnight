@@ -56,7 +56,8 @@ public class PlayerBaseAttribute : MonoBehaviour
 
         healthSlider.value = health / maxHealth;
         healthText.text = "Health: " + health.ToString("F1");
-        deadCountText.text = deadCount.ToString();
+        deadCountText.SetText(deadCount.ToString());
+        Debug.Log(deadCountText.text + deadCount.ToString());
         // Debug.Log("velocity: " + rb.velocity.magnitude + " onject name:" + gameObject.name);
         if (rb.velocity.magnitude > speedBonusThreshold)
         {

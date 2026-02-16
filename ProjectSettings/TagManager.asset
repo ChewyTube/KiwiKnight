@@ -13,6 +13,8 @@ TagManager:
   - Player1
   - Player2
   - CloneBullet
+  - DoNotTriggerTheDropper
+  - TNT
   layers:
   - Default
   - TransparentFX
