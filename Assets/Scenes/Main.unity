@@ -1815,7 +1815,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 99686212}
-  - {fileID: 249449377}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &142468725
@@ -14980,50 +14979,6 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
---- !u!1 &249449376
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 249449377}
-  - component: {fileID: 249449378}
-  m_Layer: 0
-  m_Name: DropperManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &249449377
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 249449376}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 135770507}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &249449378
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 249449376}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 14fe401c32994024ab2198d8f250e8e8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &297710337
 GameObject:
   m_ObjectHideFlags: 0
@@ -15123,8 +15078,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f0a39fa5f6af49499e860cdafc14f0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TriggerManager: {fileID: 249449376}
-  side: 1
   emitButtonName1: Attack_1
   emitButtonName2: Attack_2
 --- !u!61 &297710341
@@ -16513,8 +16466,10 @@ MonoBehaviour:
   side: 1
   TNTOffset: 1
   TNTVelocity: 20
-  TNTPrefab: {fileID: 4650781480727721058, guid: 4989497184a67924692cb978aedd5c69, type: 3}
-  GO_Manager: {fileID: 249449376}
+  TNTPrefab: {fileID: 4650781480727721058, guid: 7d4de5f662fe684468faa57c56527bd0, type: 3}
+  autoEmit: 1
+  autoEmitInterval: 16
+  autoEmitRandomOffset: 2
   rotationAxis: {x: 0, y: 0, z: 1}
 --- !u!212 &987066679
 SpriteRenderer:
@@ -17137,7 +17092,7 @@ GameObject:
   - component: {fileID: 1086746379}
   - component: {fileID: 1086746378}
   m_Layer: 0
-  m_Name: LeftDroppe
+  m_Name: LeftDropper
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17176,8 +17131,10 @@ MonoBehaviour:
   side: 0
   TNTOffset: 1
   TNTVelocity: 20
-  TNTPrefab: {fileID: 4650781480727721058, guid: 4989497184a67924692cb978aedd5c69, type: 3}
-  GO_Manager: {fileID: 249449376}
+  TNTPrefab: {fileID: 4650781480727721058, guid: 7d4de5f662fe684468faa57c56527bd0, type: 3}
+  autoEmit: 1
+  autoEmitInterval: 16
+  autoEmitRandomOffset: 2
   rotationAxis: {x: 0, y: 0, z: 1}
 --- !u!212 &1086746379
 SpriteRenderer:
@@ -17881,7 +17838,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1312555766}
   m_Layer: 0
-  m_Name: Dropper
+  m_Name: Droppers
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -20182,8 +20139,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f0a39fa5f6af49499e860cdafc14f0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TriggerManager: {fileID: 249449376}
-  side: 0
   emitButtonName1: Attack_1
   emitButtonName2: Attack_2
 --- !u!1 &1779894131

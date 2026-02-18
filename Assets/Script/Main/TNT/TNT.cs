@@ -6,6 +6,7 @@ public class TNT : MonoBehaviour
 {
     [SerializeField] private GameObject explosion;
     [SerializeField] private float damage = 8f;
+    [SerializeField] private float speedBonus = 0.5f;
  
     private Rigidbody2D rb;
 
@@ -42,7 +43,7 @@ public class TNT : MonoBehaviour
             smoke.GetComponent<Transform>().localScale *= 2;
             
             PlayerBaseAttribute attr = other.GetComponent<PlayerBaseAttribute>();
-            attr.TakeDamage(damage + rb.velocity.magnitude / 2);
+            attr.TakeDamage(damage + rb.velocity.magnitude * speedBonus);
 
             Destroy(gameObject);
         }

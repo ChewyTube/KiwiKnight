@@ -17,8 +17,12 @@ public class Dropper : MonoBehaviour
 
     [SerializeField] private GameObject TNTPrefab;
 
-    [Header("Manager")]
-    [SerializeField] private GameObject GO_Manager;
+    [Header("Auto Emit")]
+    [SerializeField] private bool autoEmit = false;
+    [SerializeField] private float autoEmitInterval = 6f;
+    [SerializeField] private float autoEmitRandomOffset = 2f;
+    // [Header("Manager")]
+    // [SerializeField] private GameObject GO_Manager;
     #endregion
 
     public Vector3 rotationAxis = new Vector3(0, 0, 1);
@@ -39,6 +43,7 @@ public class Dropper : MonoBehaviour
         initRotation = tr.rotation;
 
         // manager = GO_Manager.GetComponent<TNTTriggerManager>();
+        StartCoroutine(AutoEmit());
     }
 
     // Update is called once per frame
@@ -106,6 +111,15 @@ public class Dropper : MonoBehaviour
         if (obj != null)
         {
             Destroy(obj);
+        }
+    }
+
+    IEnumerator AutoEmit()
+    {
+        while (autoEmit)
+        {
+            yield return new WaitForSeconds(autoEmitInterval + Random.Range(-autoEmitRandomOffset, autoEmitRandomOffset));
+            Emit();
         }
     }
 }

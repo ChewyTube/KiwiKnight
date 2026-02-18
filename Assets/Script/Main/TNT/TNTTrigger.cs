@@ -11,7 +11,7 @@ enum Side
 public class TNTTrigger : MonoBehaviour
 {
     // [SerializeField] private GameObject TriggerManager;
-    [SerializeField] private Side side;
+    // [SerializeField] private Side side;
     [SerializeField] private string emitButtonName1 = "Attack_1";
     [SerializeField] private string emitButtonName2 = "Attack_2";
 
@@ -77,5 +77,6 @@ public class TNTTrigger : MonoBehaviour
         //    tr.localScale = new Vector3(-tr.localScale.x, tr.localScale.y, tr.localScale.z);
         //}
         dropper.Emit();
+        tr.localScale = new Vector3(tr.localScale.x, -tr.localScale.y, tr.localScale.z);
     }
 }
