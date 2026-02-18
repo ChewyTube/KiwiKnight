@@ -27,7 +27,9 @@ public class Dropper : MonoBehaviour
     private Quaternion initRotation;
 
     private Transform tr;
-    private TNTTriggerManager manager;
+    // private TNTTriggerManager manager;
+
+    private bool shouldEmit = false;
 
     // Start is called before the first frame update
     void Start()
@@ -36,7 +38,7 @@ public class Dropper : MonoBehaviour
         initPosition = tr.position;
         initRotation = tr.rotation;
 
-        manager = GO_Manager.GetComponent<TNTTriggerManager>();
+        // manager = GO_Manager.GetComponent<TNTTriggerManager>();
     }
 
     // Update is called once per frame
@@ -48,15 +50,20 @@ public class Dropper : MonoBehaviour
 
         transform.rotation = targetRotation;
 
-        if(side == Side.Left && manager.IsLeftTriggered())
+        //if(side == Side.Left && manager.IsLeftTriggered())
+        //{
+        //    GenerateTNT();
+        //    manager.ResetTriggerLeft();
+        //}
+        //else if(side == Side.Right && manager.IsRightTriggered())
+        //{
+        //    GenerateTNT();
+        //    manager.ResetTriggerRight();
+        //}
+        if(shouldEmit)
         {
             GenerateTNT();
-            manager.ResetTriggerLeft();
-        }
-        else if(side == Side.Right && manager.IsRightTriggered())
-        {
-            GenerateTNT();
-            manager.ResetTriggerRight();
+            shouldEmit = false;
         }
     }
 
@@ -86,6 +93,11 @@ public class Dropper : MonoBehaviour
         }
         
         return Vector2.zero;
+    }
+
+    public void Emit()
+    {
+        shouldEmit = true;
     }
 
     IEnumerator DestroyAfterTime(float time, GameObject obj)
