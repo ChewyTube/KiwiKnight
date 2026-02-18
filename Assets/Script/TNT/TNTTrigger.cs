@@ -14,8 +14,11 @@ public class TNTTrigger : MonoBehaviour
     // [SerializeField] private Side side;
     [SerializeField] private string emitButtonName1 = "Attack_1";
     [SerializeField] private string emitButtonName2 = "Attack_2";
+    [SerializeField] private float deadTime = 0.05f;
 
     private Dropper dropper;
+
+    private bool canEmit = true;
 
 
     private TNTTriggerManager manager;
@@ -76,7 +79,19 @@ public class TNTTrigger : MonoBehaviour
         //    manager.OnRightTriggered();
         //    tr.localScale = new Vector3(-tr.localScale.x, tr.localScale.y, tr.localScale.z);
         //}
+        if (!canEmit)
+        {
+            return;
+        }
         dropper.Emit();
         tr.localScale = new Vector3(tr.localScale.x, -tr.localScale.y, tr.localScale.z);
+        canEmit = false;
+        StartCoroutine(Sleep(deadTime));
+    }
+
+    IEnumerator Sleep(float time)
+    {
+        yield return new WaitForSeconds(time);
+        canEmit = true;
     }
 }

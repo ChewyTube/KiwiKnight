@@ -10,6 +10,8 @@ public class DataBridge : MonoBehaviour
     public int totalRounds = 3;
     public int timePerRound = 180;
 
+    private string currentLevel = "Main";
+
     private static DataBridge _instance;
     public static DataBridge Instance
     {
@@ -31,4 +33,13 @@ public class DataBridge : MonoBehaviour
             Destroy(gameObject); // 避免重复创建
         }
     }
+    public void SetWorldLevel(string level)
+    {
+        currentLevel = level;
+    }
+    public string GetWorldLevel()
+    {
+        return currentLevel;
+    }
+
 }

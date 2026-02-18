@@ -219,3 +219,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosion: {fileID: 6477236283955410744, guid: 3df89ec240bc8f6499a5e5cb25025291, type: 3}
   damage: 8
+  speedBonus: 0.5
+  shakeDuration: 0.1
+  shakeMagnitude: 0.02
+  delay: 0.1

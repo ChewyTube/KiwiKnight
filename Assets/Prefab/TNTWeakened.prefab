@@ -97,7 +97,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 4650781480727721058}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 3e685af0859c90c42bfcf3744dfd117b, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -220,3 +220,6 @@ MonoBehaviour:
   explosion: {fileID: 6477236283955410744, guid: 3df89ec240bc8f6499a5e5cb25025291, type: 3}
   damage: 4
   speedBonus: 0.2
+  shakeDuration: 0.1
+  shakeMagnitude: 0.02
+  delay: 0.1

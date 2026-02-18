@@ -14,6 +14,7 @@ public class Dropper : MonoBehaviour
     [Header("TNT")]
     [SerializeField] private float TNTOffset = 1f;
     [SerializeField] private float TNTVelocity = 10f;
+    [SerializeField] private float TNTLifeTime = 60f;
 
     [SerializeField] private GameObject TNTPrefab;
 
@@ -83,7 +84,7 @@ public class Dropper : MonoBehaviour
         rb.velocity = GetVelocityDirection(tr.rotation.eulerAngles) * TNTVelocity;
         // Debug.Log(rb.velocity);
 
-        StartCoroutine(DestroyAfterTime(8f, newTNT));
+        StartCoroutine(DestroyAfterTime(TNTLifeTime, newTNT));
     }
 
     private Vector2 GetVelocityDirection(Vector3 rotation)

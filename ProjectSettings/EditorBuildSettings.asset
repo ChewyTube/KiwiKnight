@@ -9,12 +9,18 @@ EditorBuildSettings:
     path: Assets/Scenes/Menu.unity
     guid: e0aca57c102babb4f939150feb59bfc5
   - enabled: 1
+    path: Assets/Scenes/ChooseLevel.unity
+    guid: 4b596e31aba9f5747ad86e40cea101aa
+  - enabled: 1
     path: Assets/Scenes/Main.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
-    path: Assets/Scenes/End.unity
-    guid: f44b315ad597e294f9027e824365772c
-  - enabled: 1
     path: Assets/Scenes/StartUp.unity
     guid: c93316b6012497a4eb66f1396d36f19d
+  - enabled: 1
+    path: Assets/Scenes/CannonWorld.unity
+    guid: ec76a24a83018ea4791e784a23ba07a3
+  - enabled: 1
+    path: Assets/Scenes/End.unity
+    guid: f44b315ad597e294f9027e824365772c
   m_configObjects: {}

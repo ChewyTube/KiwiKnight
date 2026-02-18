@@ -28,6 +28,8 @@ public class WorldAttr : MonoBehaviour
     private bool isShowingInfo;
     private float infoShowTime;
 
+    private string currentLevel;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -77,7 +79,9 @@ public class WorldAttr : MonoBehaviour
         DataBridge.Instance.Player1Score = player1Score;
         DataBridge.Instance.Player2Score = player2Score;
 
-        SceneManager.LoadScene(2);
+        // currentLevel = DataBridge.Instance.GetWorldLevel();
+        // SceneManager.LoadScene(currentLevel);
+        SceneManager.LoadScene("End");
     }
 
     void GetMinutesAndSeconds()
@@ -170,5 +174,9 @@ public class WorldAttr : MonoBehaviour
     public int GetTimePerRound()
     {
         return timePerRound;
+    }
+    public void SetWorldLevel(string level)
+    {
+        currentLevel = level;
     }
 }

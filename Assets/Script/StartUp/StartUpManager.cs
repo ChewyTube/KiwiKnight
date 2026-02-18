@@ -94,6 +94,6 @@ public class StartUpManager : MonoBehaviour
     {
         DataBridge.Instance.totalRounds = totalRounds[currentRoundIndex];
         DataBridge.Instance.timePerRound = timePerRound[currentTimeIndex];
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene("ChooseLevel");
     }
 }

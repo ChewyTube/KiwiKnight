@@ -7,10 +7,10 @@ public class EndButton : MonoBehaviour
 {
     public void GameRestart()
     {
-        SceneManager.LoadScene(3);
+        SceneManager.LoadScene("StartUp");
     }
     public void BackToMenu()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene("Menu");
     }
 }
